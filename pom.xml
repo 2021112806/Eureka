@@ -10,6 +10,7 @@
   <!--新增包含的子项目-->
   <modules>
     <module>eureka-service</module>
+    <module>product-service</module>
   </modules>
 
   <name>ParentProject</name>
