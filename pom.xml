@@ -11,6 +11,8 @@
   <modules>
     <module>eureka-service</module>
     <module>product-service</module>
+    <module>product-client</module>
+    <module>gateway-service</module>
   </modules>
 
   <name>ParentProject</name>
@@ -88,10 +90,13 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency> <!-- feignclient远程调用 --> <dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-openfeign</artifactId>
-  </dependency> <!--Lombok -->
+    </dependency>
+    <!-- feignclient远程调用 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <!--Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
