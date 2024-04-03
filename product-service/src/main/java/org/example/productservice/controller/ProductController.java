@@ -23,7 +23,7 @@ public class ProductController {
      * 根据商品id查询商品
      */
     @GetMapping("/findByProductId/{productId}")
-    public Product findAll(@PathVariable("productId") Long productId) {
+    public Product findByProductId(@PathVariable("productId") Long productId) {
         Product product = productMapper.findByProductId(productId);
         log.info("-------------OK /findByProductId/{productId}--------------------");
         return product;
@@ -33,7 +33,7 @@ public class ProductController {
      * 查询所有商品
      */
     @GetMapping("/queryAllProduct")
-    public List<Product> findAll() {
+    public List<Product> queryAllProduct() {
         List<Product> productList = productMapper.queryAllProduct();
         log.info("-------------OK queryAllProduct--------------------");
         return productList;

@@ -5,6 +5,7 @@ import org.example.productclient.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @Slf4j
 public class ProductServiceClientController {
 
+    @Qualifier("org.example.productclient.Client.ProductServiceClient")
     @Autowired
     private final ProductServiceClient prodServiceClient;
 
@@ -20,7 +22,7 @@ public class ProductServiceClientController {
      * 根据商品id查询商品
      */
     @GetMapping("/findByProductId/{productId}")
-    public Product findAll(@PathVariable("productId") Long productId) {
+    public Product findByProductId(@PathVariable("productId") Long productId) {
         Product product = prodServiceClient.findByProductId(productId);
         log.info("-------------In client findByProductId---------------");
         return product;
@@ -30,8 +32,9 @@ public class ProductServiceClientController {
      * 查询所有商品
      */
     @GetMapping("/queryAllProduct")
-    public List<Product> findAll() {
+    public List<Product> queryAllProduct() {
         List<Product> productList = prodServiceClient.queryAllProduct();
+        //Thread.sleep(2000);
         log.info("--------------In client queryAllProduct--------------");
         return productList;
     }
