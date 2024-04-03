@@ -1,6 +1,9 @@
 package org.example.productservice.po;
 
-import lombok.Data; /** * 商品的实体 */
+import lombok.Data;
+/**
+ * 商品的实体
+ */
 @Data public class Product {
     private Long id;
     private String productName;
